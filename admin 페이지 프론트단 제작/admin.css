@@ -1,0 +1,189 @@
+:root[color-theme="light"] {
+  --surface-default: white;
+  --btn-default: white;
+  --btn-svg-hover: #ffa500;
+}
+
+:root[color-theme="dark"] {
+  --surface-default: #1e1e1e;
+  --btn-default: #1e1e1e;
+  --btn-svg-hover: gold;
+}
+
+body {
+  background-color: var(--surface-default);
+  transition: background-color 0.5s;
+}
+
+.dark-light-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: var(--btn-default);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+}
+
+.icon30 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+.icon30 > svg {
+  transition: fill 0.5s, transform 0.5s ease;
+}
+
+.sun {
+  display: flex;
+}
+.moon {
+  display: none;
+}
+
+:root[color-theme="dark"] .dark-light-toggle .sun {
+  display: none;
+}
+:root[color-theme="dark"] .dark-light-toggle .moon {
+  display: flex;
+}
+
+.dark-light-toggle:hover svg {
+  fill: var(--btn-svg-hover);
+  transform: scale(1.2);
+}
+
+.icon30 {
+  transition: transform 0.5s ease-in-out;
+}
+
+.sun {
+  animation: rise-animation 1s forwards;
+  transform-origin: 50% 200%;
+}
+.moon {
+  animation: set-animation 1s forwards;
+  transform-origin: 50% 200%;
+}
+
+[color-theme="dark"] .dark-light-toggle .sun {
+  animation: set-animation 1s forwards;
+}
+[color-theme="dark"] .dark-light-toggle .moon {
+  animation: rise-animation 1s forwards;
+}
+
+@keyframes rise-animation {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes set-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+:root[color-theme="light"] {
+  --surface-default: white;
+  --btn-default: white;
+  --btn-svg-hover: #ffa500;
+
+  --text-default: black;
+  --table-bg: white;
+  --table-text: black;
+  --select-bg: white;
+  --select-text: black;
+}
+
+:root[color-theme="dark"] {
+  --surface-default: #1e1e1e;
+  --btn-default: #1e1e1e;
+  --btn-svg-hover: gold;
+
+  --text-default: #ddd;
+  --table-bg: #2e2e2e;
+  --table-text: #ddd;
+  --select-bg: #2e2e2e;
+  --select-text: #ddd;
+}
+
+/* body 텍스트 색상 */
+body {
+  background-color: var(--surface-default);
+  color: var(--text-default);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* 테이블 스타일 */
+table {
+  background-color: var(--table-bg);
+  color: var(--table-text);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* 셀렉트 박스 스타일 */
+select {
+  background-color: var(--select-bg);
+  color: var(--select-text);
+  transition: background-color 0.5s, color 0.5s;
+  border: 1px solid var(--select-text);
+}
+
+:root[color-theme="dark"] table,
+:root[color-theme="dark"] th,
+:root[color-theme="dark"] td {
+  background-color: #2e2e2e; /* 셀 배경 어둡게 */
+  color: #ddd; /* 글자 밝게 */
+  border-color: #555; /* 테두리 색도 어둡게 */
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="light"] table,
+:root[color-theme="light"] th,
+:root[color-theme="light"] td {
+  background-color: white;
+  color: black;
+  border-color: black;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="dark"] select,
+:root[color-theme="dark"] input[type="text"] {
+  background-color: #2e2e2e;
+  color: #ddd;
+  border: 1px solid #555;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="light"] select,
+:root[color-theme="light"] input[type="text"] {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="dark"] input {
+  background-color: #2e2e2e; /* 셀 배경 어둡게 */
+  color: #ddd; /* 글자 밝게 */
+  border-color: #555;
+  border-style: none;
+  transition: background-color 0.5s, color 0.5s;
+}

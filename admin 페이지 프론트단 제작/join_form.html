@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link
+      href="join_form_style.css"
+      rel="stylesheet">
+      </link>
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+      }
+      .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 25px 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        
+      }
+      .card {
+        border: none;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+      }
+      .form-section {
+        margin-bottom: 1.5rem;
+      }
+      .form-check-inline {
+        margin-right: 1.5rem;
+      }
+      .form-text {
+        font-size: 0.875em;
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- mm -->
+      <button class="dark-light-toggle" aria-hidden="true">
+            <div class="icon30 sun">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#222222"
+              >
+                <path
+                  d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
+                />
+              </svg>
+            </div>
+            <div class="icon30 moon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#FFFFFF"
+              >
+                <path
+                  d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+                />
+              </svg>
+              <link href="admin.css" rel="stylesheet" />
+            </div>
+          </button>
+      <h2 class="mb-4">회원가입</h2>
+      <form id="form" action="#">
+        <table class="table table-bordered">
+          <tr>
+            <th>아이디</th>
+            <td>
+              <input
+                name="id"
+                placeholder="아이디"
+                autocomplete="off"
+                required minlength="4" 
+                class="form-control"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>비밀번호</th>
+            <td>
+              <input
+                type="password"
+                name="pw1"
+                placeholder="비밀번호"
+                required minlength="4"
+                class="form-control"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>비밀번호 확인</th>
+            <td>
+              <input
+                type="password"
+                name="pw2"
+                placeholder="비밀번호 확인"
+                required
+                class="form-control"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>이름</th>
+            <td>
+              <input
+                name="name"
+                placeholder="사용자 이름"
+                autocomplete="off"
+                required
+                class="form-control"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>전화번호</th>
+            <td>
+              <input
+                name="phone"
+                placeholder="휴대전화 번호"
+                autocomplete="off"
+                required
+                class="form-control"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>성별</th>
+            <td>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  id="male"
+                  checked
+                />
+                <label class="form-check-label" for="male">남자</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  id="female"
+                />
+                <label class="form-check-label" for="female">여자</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>이메일</th>
+            <td>
+              <input
+                title="이메일을 입력해주세요"
+                placeholder="이메일"
+                type="email"
+                name="email"
+                autocomplete="off"
+                required
+                class="form-control"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>주소</th>
+            <td>
+              <input
+                title="주소를 입력해주세요"
+                placeholder="주소입력은 선택사항입니다"
+                type="address"
+                name="address"
+                autocomplete="off"
+                class="form-control"
+              />
+          </tr>
+        </table>
+
+        <div class="text-center mt-3">
+          <input
+            type="submit"
+            value="가입"
+            class="btn btn-primary me-2"
+            title="가입"
+          />
+          <input
+            type="reset"
+            value="초기화"
+            class="btn btn-primary me-2"
+            title="초기화"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script src="join_form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.form-check-inline {
+  margin-right: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+#welcome {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#welcome h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+#welcome p {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+#welcome strong {
+  color: #343a40;
+}
+
+.container input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.table,
+.table th,
+.table td {
+  background-color: #fff;
+  color: #333;
+  border-color: #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-color: #dee2e6;
+}
+
+/* mm */
+:root[color-theme="light"] {
+  --surface-default: white;
+  --btn-default: white;
+  --btn-svg-hover: #ffa500;
+}
+
+:root[color-theme="dark"] {
+  --surface-default: #1e1e1e;
+  --btn-default: #1e1e1e;
+  --btn-svg-hover: gold;
+}
+
+body {
+  background-color: var(--surface-default);
+  transition: background-color 0.5s;
+}
+
+.dark-light-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: var(--btn-default);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+}
+
+.icon30 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+.icon30 > svg {
+  transition: fill 0.5s, transform 0.5s ease;
+}
+
+.sun {
+  display: flex;
+}
+.moon {
+  display: none;
+}
+
+:root[color-theme="dark"] .dark-light-toggle .sun {
+  display: none;
+}
+:root[color-theme="dark"] .dark-light-toggle .moon {
+  display: flex;
+}
+
+.dark-light-toggle:hover svg {
+  fill: var(--btn-svg-hover);
+  transform: scale(1.2);
+}
+
+.icon30 {
+  transition: transform 0.5s ease-in-out;
+}
+
+.sun {
+  animation: rise-animation 1s forwards;
+  transform-origin: 50% 200%;
+}
+.moon {
+  animation: set-animation 1s forwards;
+  transform-origin: 50% 200%;
+}
+
+[color-theme="dark"] .dark-light-toggle .sun {
+  animation: set-animation 1s forwards;
+}
+[color-theme="dark"] .dark-light-toggle .moon {
+  animation: rise-animation 1s forwards;
+}
+
+@keyframes rise-animation {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes set-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+:root[color-theme="light"] {
+  --surface-default: white;
+  --btn-default: white;
+  --btn-svg-hover: #ffa500;
+
+  --text-default: black;
+  --table-bg: white;
+  --table-text: black;
+  --select-bg: white;
+  --select-text: black;
+}
+
+:root[color-theme="dark"] {
+  --surface-default: #2e2e2e;
+  --btn-default: #2e2e2e;
+  --btn-svg-hover: gold;
+
+  --text-default: #ddd;
+  --table-bg: #2e2e2e;
+  --table-text: #ddd;
+  --select-bg: #2e2e2e;
+  --select-text: #ddd;
+}
+
+/* body 텍스트 색상 */
+body {
+  background-color: var(--surface-default);
+  color: var(--text-default);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* 테이블 스타일 */
+table {
+  background-color: var(--table-bg);
+  color: var(--table-text);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* 셀렉트 박스 스타일 */
+select {
+  background-color: var(--select-bg);
+  color: var(--select-text);
+  transition: background-color 0.5s, color 0.5s;
+  border: 1px solid var(--select-text);
+}
+
+:root[color-theme="dark"] table,
+:root[color-theme="dark"] th,
+:root[color-theme="dark"] td {
+  background-color: #2e2e2e; /* 셀 배경 어둡게 */
+  color: #ddd; /* 글자 밝게 */
+  border-color: #555; /* 테두리 색도 어둡게 */
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="light"] table,
+:root[color-theme="light"] th,
+:root[color-theme="light"] td {
+  background-color: white;
+  color: black;
+  border-color: black;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="dark"] select,
+:root[color-theme="dark"] input[type="text"] {
+  background-color: #2e2e2e;
+  color: #ddd;
+  border: 1px solid #555;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="light"] select,
+:root[color-theme="light"] input[type="text"] {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="dark"] input {
+  background-color: #2e2e2e; /* 셀 배경 어둡게 */
+  color: #ddd; /* 글자 밝게 */
+  border: 1px solid #ddd;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+:root[color-theme="light"] h2 {
+  color: black;
+}
+:root[color-theme="dark"] h2 {
+  color: white;
+}
+
+:root[color-theme="light"] .container {
+  background-color: #fff;
+}
+
+:root[color-theme="dark"] .container {
+  background-color: #2e2e2e;
+}
+
+:root[color-theme="dark"] .container input {
+  border: 1px solid #4e4e4e !important;
+}
+:root[color-theme="light"] .container input {
+  border-color: #ddd;
+}
+
+:root[color-theme="dark"] .dark-light-toggle {
+  background-color: #2e2e2e !important;
+}
