@@ -39,18 +39,22 @@ form.addEventListener("submit", function (event) {
   }
 
   // 가입 완료 페이지
+  const currentThemeClass = document.body.className; // 기존 다크모드 클래스 백업
+
   document.body.innerHTML = `
-    <div id="welcome">
-      <h2>${userName}님, 가입을 환영합니다!</h2>
-      <p><strong>아이디:</strong> ${userId}</p>
-      <p><strong>성별:</strong> ${genderText}</p>
-      <p><strong>이메일:</strong> ${userEmail}</p>
-      <p><strong>주소:</strong> ${userAddress || "입력 안함"}</p>
-      <button type="button" class="btn btn-primary mt-3" onclick="location.href='admin.html'">
-        메인페이지
-      </button>
-    </div>
-  `;
+  <div id="welcome" class="container">
+    <h2>${userName}님, 가입을 환영합니다!</h2>
+    <p><strong>아이디:</strong> ${userId}</p>
+    <p><strong>성별:</strong> ${genderText}</p>
+    <p><strong>이메일:</strong> ${userEmail}</p>
+    <p><strong>주소:</strong> ${userAddress || "입력 안함"}</p>
+    <button type="button" class="btn btn-primary mt-3" onclick="location.href='admin.html'">
+      메인페이지
+    </button>
+  </div>
+`;
+
+  document.body.className = currentThemeClass; // 다시 적용!
 });
 
 // mm

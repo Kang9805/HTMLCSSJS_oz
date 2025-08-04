@@ -134,7 +134,9 @@
                 name="phone"
                 placeholder="휴대전화 번호"
                 autocomplete="off"
-                required
+                required 
+                pattern="^01[016789]-?\d{3,4}-?\d{4}$"
+                title="010-1234-5678 01012345678 형식으로 입력해주세요"
                 class="form-control"
               />
             </td>
